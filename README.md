@@ -35,7 +35,7 @@ user management, chat, and AI agent orchestration.
 ## 2. High-Level Architecture
 
 ### 2.1 Architecture Diagram
-![alt text](ProjectX_architecture-1.png)
+![alt text](https://github.com/nishikantraj/ProjectRed/blob/main/ProjectX_architecture-1.png)
 - Client(s) → API Gateway / Backend
 - Backend → Database
 - Backend → External services (AI, maps, payment, etc.)
