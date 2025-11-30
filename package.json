@@ -1,7 +1,7 @@
 {
   "name": "projectx",
   "version": "1.0.0",
-  "description": "",
+  "description": "> # Backend Service Documentation Template",
   "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,18 +12,30 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "@prisma/client": "^7.0.0",
+    "@prisma/adapter-pg": "^7.0.1",
+    "@prisma/client": "^7.0.1",
     "@types/express": "^5.0.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "pg": "^8.16.3",
     "zod": "^4.1.13"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "@types/pg": "^8.15.6",
     "prisma": "^6.19.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishikantraj/ProjectRed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nishikantraj/ProjectRed/issues"
+  },
+  "homepage": "https://github.com/nishikantraj/ProjectRed#readme"
 }
