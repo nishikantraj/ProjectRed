@@ -1,7 +1,10 @@
 import express  from "express";
+import userRouter from './modules/user/user.routes'
 
 export const app = express();
 
-app.get('/',(req, res)=>{
-    return res.status(200).send("Hello");
-})
+
+app.use(express.json());
+
+
+app.use('/api/v1/user', userRouter);
