@@ -1,24 +1,11 @@
 import { Request, Response } from "express";
 import { hashPassword } from "../../utils/crypto";
 import { prisma } from "../../lib/prisma";
-import { userSchema } from "../../config/zodValidation";
 import { createJwt } from "../../utils/jsonwebtoken";
 
 
 const registerHandler = async(req:Request,res:Response)=>{
     const {userName, name, email, password} = req.body;
-    
-    const parsedData = userSchema.safeParse({name, userName, email,password});
-
-    
-    if(!parsedData.success){
-        const error = parsedData.error.issues.map(e=>e.message)
-        
-        return res.status(400).json({
-            success: false,
-            message: error,
-        });
-    }
 
     
     const doesUserExists = await prisma.user.findMany({
