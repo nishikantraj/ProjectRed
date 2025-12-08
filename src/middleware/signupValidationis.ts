@@ -9,7 +9,7 @@ const userRegisterSchema = z.object({
   password: z.string().min(5, "Password must be at least 5 characters long"),
 });
 
-export const userLoginSchema = userRegisterSchema.pick({email:true,password:true})
+export const userLoginSchema = userRegisterSchema.pick({email:true})
 
 export const signupValidation = async(req: Request, res:Response, next:NextFunction)=>{
 

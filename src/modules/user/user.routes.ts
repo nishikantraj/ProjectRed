@@ -6,7 +6,7 @@ import loginHandler from "./loginHandler";
 
 const router = Router();
 
-router.post('/register', signupValidation,  registerHandler);
+router.post('/register', signupValidation, registerHandler);
 router.post('/login', signInValidation,  loginHandler);
 
 export default router;

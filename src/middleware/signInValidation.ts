@@ -3,8 +3,8 @@ import { userLoginSchema } from "./signupValidationis";
 
 export const signInValidation = async(req: Request, res:Response, next:NextFunction)=>{
 
-    const {email,password} = req.body;
-    const parsedData = userLoginSchema.safeParse({email,password});
+    const {email} = req.body;
+    const parsedData = userLoginSchema.safeParse({email});
 
     
     if(!parsedData.success){
