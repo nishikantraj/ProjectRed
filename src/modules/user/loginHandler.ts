@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { prisma } from "../../lib/prisma";
-import { createJwt } from "../../utils/jsonwebtoken";
-import { dehashPassword } from "../../utils/crypto";
+import { createJwt } from "@/utils/jsonwebtoken";
+import { dehashPassword } from "@/utils/crypto";
+import { prisma } from "@/lib/prisma";
 
 
 const loginHandler = async(req:Request,res:Response)=>{

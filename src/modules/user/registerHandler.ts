@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
-import { hashPassword } from "../../utils/crypto";
-import { prisma } from "../../lib/prisma";
-import { createJwt } from "../../utils/jsonwebtoken";
-
+import { hashPassword } from "@/utils/crypto";
+import { createJwt } from "@/utils/jsonwebtoken";
+import { prisma } from "@/lib/prisma";
 
 const registerHandler = async(req:Request,res:Response)=>{
     const {userName, name, email, password} = req.body;
