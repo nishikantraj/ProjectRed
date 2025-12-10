@@ -37,8 +37,17 @@ const registerHandler = async(req:Request,res:Response)=>{
     });
 
     const jwtToken = createJwt({id:user.id, userName:userName});
+    const isProduction = process.env.NODE_ENV === 'production';
+    console.log("Is Secure Cookie Enabled?", process.env.NODE_ENV === 'production');
 
-    return res.status(200).json({msg:"User created", jwtToken});
+    res.cookie('token', jwtToken, {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 1000
+    })
+    
+    return res.status(200).json({msg:"User created successfully"});
 }
 
 export default registerHandler;

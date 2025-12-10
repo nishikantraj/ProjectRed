@@ -24,8 +24,17 @@ const loginHandler = async(req:Request,res:Response)=>{
     }
 
     const jwtToken = createJwt({id:doesUserExists.id, userName:doesUserExists.userName});
+    const isProduction = process.env.NODE_ENV === 'production';
+    console.log("Is Secure Cookie Enabled?", process.env.NODE_ENV === 'production');
 
-    return res.status(200).json({msg:"User created", jwtToken});
+    res.cookie('token', jwtToken, {
+        httpOnly:true,
+        secure:isProduction,
+        sameSite:"lax",
+        maxAge: 60 * 60 * 1000
+    });
+    
+    return res.status(200).json({msg:"User logged in successfully"});
 }
 
 export default loginHandler;
